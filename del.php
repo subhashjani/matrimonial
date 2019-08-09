@@ -1,0 +1,19 @@
+<?php
+if(!isset($_COOKIE["user"])){
+	header("location:login.php");
+}
+else{
+	$email=$_COOKIE["user"];
+if(empty($_POST["email"])||empty($_POST["password"])){
+		header("location:delete.php");
+	}
+	else{
+		$email=$_POST["email"];
+		$password=$_POST["password"];
+		mysql_connect("localhost","root","");
+		mysql_select_db("matrimonialdb");
+		mysql_query("delete from matri where email='$email' AND password='$password'");
+	     header("location:login.php");
+	}
+}
+	?>

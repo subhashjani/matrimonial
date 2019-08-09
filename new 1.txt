@@ -1,0 +1,240 @@
+
+
+
+
+
+<?php
+	if(empty($_POST["pn"])||empty($_POST["email"])||empty($_POST["password"])){
+		header("location:signup5.php");
+	
+	}
+	else{
+		
+		$pn=$_POST["pn"];
+		$email=$_POST["email"];
+		$password=$_POST["password"];
+		mysql_connect("localhost","root","");
+		mysql_select_db("matrimonialdb");
+		mysql_query("insert into matri values (0,0,0,0,0,0,0,0,0,0,0,'$pn','$email','$password',0)")or die(mysql_error());
+	     header("location:login.php");
+	}
+	
+	
+?>
+
+
+
+<?php
+	if(empty($_POST["name"])||empty($_POST["gender"])||empty($_POST["country"])||empty($_POST["address"])||empty($_POST["dob"])||empty($_POST["height"])||empty($_POST["highedu"])||empty($_POST["wa"])||empty($_POST["mt"])||empty($_POST["religion"])||empty($_POST["ms"])||empty($_POST["pn"])||empty($_POST["email"])||empty($_POST["password"])){
+		header("location:signup.php");
+	
+	}
+	else{
+		$name=$_POST["name"];
+		$gender=$_POST["gender"];
+		$country=$_POST["country"];
+		$address=$_POST["address"];
+		$dob=$_POST["dob"];
+		$height=$_POST["height"];
+		$highedu=$_POST["highedu"];
+		$wa=$_POST["wa"];
+		$mt=$_POST["mt"];
+		$religion=$_POST["religion"];
+		$ms=$_POST["ms"];
+		$pn=$_POST["pn"];
+		$email=$_POST["email"];
+		$password=$_POST["password"];
+		mysql_connect("localhost","root","");
+		mysql_select_db("matrimonialdb");
+		mysql_query("insert into matri values ('$name','$gender','$country','$address','$dob','$height','$highedu','$wa','$mt','$religion','$ms','$pn','$email','$password',0)")or die(mysql_error());
+	     header("location:login.php");
+	}
+	
+	
+?>
+
+
+
+
+
+
+
+
+
+
+<?php
+	if(empty($_POST["pn"])||empty($_POST["email"])||empty($_POST["password"])){
+		header("location:signup5.php");
+	
+	}
+	else{
+		
+		$pn=$_POST["pn"];
+		$email=$_POST["email"];
+		$password=$_POST["password"];
+		mysql_connect("localhost","root","");
+		mysql_select_db("matrimonialdb");
+		mysql_query("insert into matri values (0,0,0,0,0,0,0,0,0,0,0,'$pn','$email','$password',0)")or die(mysql_error());
+	     header("location:login.php");
+	}
+	
+	
+?>
+
+
+
+
+
+	echo "<a href=logout1.php>Logout</a><br>";
+		echo "<a href=change_pass.php>change password</a><br>"; 
+		echo "<a href=editprofile.php>edit profile</a><br>"; 
+		echo "<a href=delete.php>delete account</a><br>"; 
+		echo "<a href=search.php>search</a>"; 
+		
+		
+		
+		
+		
+		<?php
+if(!isset($_COOKIE["user"])){
+	header("location:home.php");
+}
+else{
+	$email=$_COOKIE["user"];
+			mysql_connect("localhost","root","");
+		mysql_select_db("matrimonialdb");
+		$rs=mysql_query("select * from reg where email='$email'");
+		if($r=mysql_fetch_array($rs)){
+			
+	?>
+	
+	
+	
+	
+	
+	value=<?php echo $r[4];?>
+	
+	
+	
+	
+	
+
+
+
+
+<?php
+	if(empty($_POST["pn"])||empty($_POST["email"])||empty($_POST["password"])){
+		header("location:signup5.php");
+	
+	}
+	else{
+		
+		
+		
+		
+		$pn=$_POST["pn"];
+		$email=$_POST["email"];
+		$password=$_POST["password"];
+		mysql_connect("localhost","root","");
+		mysql_select_db("matrimonialdb");
+		mysql_query("insert into matri values (0,0,0,0,0,0,0,0,0,0,0,'$pn','$email','$password',0)")or die(mysql_error());
+	     header("location:login.php");
+	}
+	
+	
+?>
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="login" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+				<div class="modal-header" style="background-color: red ; color: white"> change-password</div>
+				<form  method="post" action="changepassword.php">
+				
+				<div class="modal-body">
+				 
+curent password<input type="password" name="cp" class="form-control" placeholder="enter curent password"required="required"><br>
+new password<input type="password" name="np" class="form-control"  placeholder="enter new password"required="required"><br>
+retype password<input type="password" name="rp" class="form-control"  placeholder="retype password"required="required"><br>
+<button class="btn btn-warning"> change-password</button>
+</form>
+				</div>
+
+
+		</div>
+	</div>
+
+
+</div>
+
+<div class="jumbotron" style="background-color: red">
+
+	<h4>
+	<a href="http://127.0.0.1/matrimonial/search.php" style="float: right ; color:white"> Serch</a>
+	<a href="http://127.0.0.1/matrimonial/logout1.php" style="float: right ; color:white"> logout</a>
+	<a href="http://127.0.0.1/matrimonial/home.php" style="float: left ; color:white">vivah.com</a>
+	
+	<a href="http://127.0.0.1/matrimonial/profile.php" style="float: right ; color:white">profile</a>
+	<a href="http://127.0.0.1/matrimonial/home.php" style="float: right ; color:white">home</a>
+	</h4>
+	</div>
+
+	
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(".login").click(function(){
+			$("#login").modal();
+		});
+
+	});
+
+
+</script>
+
+     </head>
+	 <body style="background-color: yellow">
+		
+
+<div class="modal fade" id="login" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+				<div class="modal-header" style="background-color: red ; color: white"> change-password</div>
+				<form  method="post" action="changepassword.php">
+				
+				<div class="modal-body">
+				 
+curent password<input type="password" name="cp" class="form-control" placeholder="enter curent password"required="required"><br>
+new password<input type="password" name="np" class="form-control"  placeholder="enter new password"required="required"><br>
+retype password<input type="password" name="rp" class="form-control"  placeholder="retype password"required="required"><br>
+<button class="btn btn-warning"> change-password</button>
+</form>
+				</div>
+
+
+		</div>
+	</div>
+
+
+</div>
+
+<div class="jumbotron" style="background-color: red">
+
+	<h4 style="color: white ; float: right" class="login">change-password</h4>
+	<h4>
+	<a href="http://127.0.0.1/matrimonial/search.php" style="float: right ; color:white"> Serch</a>
+	<a href="http://127.0.0.1/matrimonial/logout1.php" style="float: right ; color:white"> logout</a>
+	<a href="http://127.0.0.1/matrimonial/delete.php" style="float: right ; color:white"> delete-account</a>
+	
+	<a href="http://127.0.0.1/matrimonial/editprofile.php" style="float: right ; color:white"> edit-profile</a>
+	<a href="http://127.0.0.1/matrimonial/home.php" style="float: left ; color:white">vivah.com</a>
+	<a href="http://127.0.0.1/matrimonial/home.php" style="float: right ; color:white">home</a>
+	</h4>
+	</div>
